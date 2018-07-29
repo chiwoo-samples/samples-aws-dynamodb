@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "d707d426-7640-4ae3-9e35-f19278005a10",
+		"name": "Demo-DynamoDB",
+		"description": "Demo-DynamoDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CodeMapping 배치 임포트",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"CodeMapping.sample.log\",\"CodeMapping.20180710.2.log\"]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/codes/batch-import",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"codes",
+						"batch-import"
+					]
+				},
+				"description": "CodeMapping 배치 임포트"
+			},
+			"response": []
+		},
+		{
+			"name": "CodeMapping 삭제",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/codes/A0003b1d710e1272641abafb26a6321462a2d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"codes",
+						"A0003b1d710e1272641abafb26a6321462a2d"
+					]
+				},
+				"description": "CodeMapping 삭제"
+			},
+			"response": []
+		},
+		{
+			"name": "CodeMapping 수정",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n  \"id\": \"A0003b1d710e1272641abafb26a6321462a2d\", \r\n  \"ifid\": \"mydifyA0003b1d710e1272641abafb26a6321462a2d-2050f33a110e4bd895ad03869f28ce204c17986cb16845f8bf9d8d17d764954b\", \r\n  \"regtime\": 1531201737841 \r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/codes/A0003b1d710e1272641abafb26a6321462a2d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"codes",
+						"A0003b1d710e1272641abafb26a6321462a2d"
+					]
+				},
+				"description": "CodeMapping 수정"
+			},
+			"response": []
+		},
+		{
+			"name": "CodeMapping 조회",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/codes/A0003b1d710e1272641abafb26a6321462a2d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"codes",
+						"A0003b1d710e1272641abafb26a6321462a2d"
+					]
+				},
+				"description": "CodeMapping 조회"
+			},
+			"response": []
+		},
+		{
+			"name": "CodeMapping 등록",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n  \"id\": \"A0003b1d710e1272641abafb26a6321462a2d\", \r\n  \"ifid\": \"12050f33a110e4bd895ad03869f28ce204c17986cb16845f8bf9d8d17d764954b\", \r\n  \"regtime\": 1531201737841 \r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/codes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"codes"
+					]
+				},
+				"description": "CodeMapping 등록"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "49804581-066f-44ce-abf2-a44d8226ef4a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "104e2ec1-9e15-4bd7-96b0-4f9f0d89d309",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

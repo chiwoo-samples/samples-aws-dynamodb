@@ -20,8 +20,8 @@ public class JasyptStringEncryptorTest {
     private StringEncryptor jasyptStringEncryptor() {
         PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
         SimpleStringPBEConfig config = new SimpleStringPBEConfig();
-        config.setPassword("samples-aws-dynamodb");
         config.setAlgorithm(ALGORITHM);
+        config.setPassword("samples-aws-dynamodb");
         config.setKeyObtentionIterations("1000");
         config.setPoolSize("1");
         config.setProviderName("SunJCE");
@@ -42,18 +42,10 @@ public class JasyptStringEncryptorTest {
 
     @Test
     void ut1001_stringEncryptor() throws Exception {
-        final String source = "TmBAXmSuY9zOb8B9vsFwds0eiCEdWuypnUP3wuK/";
+        final String source = "TmBAXmSuY9zOb8B9vsFwd19761120s0eiCEdWuypnUP3wuK/";
         StringEncryptor encryptor = jasyptStringEncryptor();
         log.info("ENC({})", encryptor.encrypt(source));
         assertEquals(source, encryptor.decrypt(encryptor.encrypt(source)));
     }
 
-    @Test
-    void ut1002_stringEncryptor() throws Exception {
-        final String source = "We1c0me^2018";
-        StringEncryptor encryptor = jasyptStringEncryptor();
-        log.info("u ENC({})", encryptor.encrypt("beluga2018"));
-        log.info("p ENC({})", encryptor.encrypt(source));
-        assertEquals(source, encryptor.decrypt(encryptor.encrypt(source)));
-    }
 }
